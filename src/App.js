@@ -71,16 +71,22 @@ const App = () => {
     }
 
     const calculateFaceLocation = data => {
-        const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box
         const image = document.getElementById('inputimage')
         const width = Number(image.width)
         const height = Number(image.height)
-        return {
-            leftCol: clarifaiFace.left_col * width,
-            topRow: clarifaiFace.top_row * height,
-            rightCol: width - clarifaiFace.right_col * width,
-            bottomRow: height - clarifaiFace.bottom_row * height,
-        }
+        const boxArray = []
+
+        data.outputs[0].data.regions?.forEach(region => {
+            const clarifaiFace = region.region_info.bounding_box
+            boxArray.push({
+                leftCol: clarifaiFace.left_col * width,
+                topRow: clarifaiFace.top_row * height,
+                rightCol: width - clarifaiFace.right_col * width,
+                bottomRow: height - clarifaiFace.bottom_row * height,
+            })
+        })
+
+        return boxArray
     }
 
     const displayFaceBox = box => {
@@ -112,7 +118,7 @@ const App = () => {
                 }
                 displayFaceBox(calculateFaceLocation(response))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     const onRouteChange = route => {
