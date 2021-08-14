@@ -1,24 +1,21 @@
 {
-    "name": "facerecognitionbrain",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@emotion/react": "^11.4.1",
-        "clarifai": "^2.9.1",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-particles-js": "^3.5.3",
-        "react-scripts": "^4.0.1",
-        "react-tilt": "^0.1.4",
-        "react-tsparticles": "^1.33.3",
-        "tachyons": "^4.12.0",
-        "tsparticles": "^1.33.3"
-    },
+    "name": "face-recognition-frontend",
+    "version": "1.0.0",
+    "license": "UNLICENSED",
+    "main": "index.js",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.4.1",
+        "clarifai": "^2.9.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "^4.0.3",
+        "react-tsparticles": "^1.33.3"
     },
     "browserslist": {
         "production": [

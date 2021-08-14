@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import Clarifai from 'clarifai'
 import { useState } from 'react'
-import Particles from 'react-particles-js'
+import Particles from 'react-tsparticles'
 import FaceRecognition from './components/FaceRecognition'
 import ImageLinkForm from './components/ImageLinkForm'
 import Introduction from './components/Introduction'
@@ -135,7 +135,7 @@ const App = () => {
 
     return (
         <div>
-            <Particles css={classes.particles} option={particlesOptions} />
+            <Particles css={classes.particles} options={particlesOptions} />
             <Navigation {...{ onRouteChange, isSignedIn }} />
             {route === 'home' ? (
                 <>
