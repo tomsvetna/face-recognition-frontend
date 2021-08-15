@@ -2,17 +2,13 @@
 import Clarifai from 'clarifai'
 import { useState } from 'react'
 import Particles from 'react-tsparticles'
+import { api } from './api'
 import FaceRecognition from './components/FaceRecognition'
 import ImageLinkForm from './components/ImageLinkForm'
 import Introduction from './components/Introduction'
 import Navigation from './components/Navigation'
 import Signin from './components/SignIn'
 import SignUp from './components/SignUp'
-
-const api =
-    process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000'
-        : 'https://stormy-atoll-51585.herokuapp.com'
 
 const app = new Clarifai.App({
     apiKey: '36adb8ec0f5f4b7882ee093d93c4bffc',
