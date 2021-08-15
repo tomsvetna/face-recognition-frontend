@@ -45,7 +45,8 @@ const particlesOptions = {
 }
 
 const App = () => {
-    console.log(REACT_APP_ENV)
+    console.log(process.env.REACT_APP_ENV)
+    console.log(api)
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [box, setBox] = useState(null)
