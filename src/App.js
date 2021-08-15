@@ -9,6 +9,11 @@ import Navigation from './components/Navigation'
 import Signin from './components/SignIn'
 import SignUp from './components/SignUp'
 
+const api =
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://stormy-atoll-51585.herokuapp.com'
+
 const app = new Clarifai.App({
     apiKey: '36adb8ec0f5f4b7882ee093d93c4bffc',
 })
@@ -104,7 +109,7 @@ const App = () => {
             .predict('a403429f2ddf4b49b307e318f00e528b', input)
             .then(response => {
                 if (response) {
-                    fetch('http://localhost:3000/image', {
+                    fetch(`${api}/image`, {
                         method: 'put',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

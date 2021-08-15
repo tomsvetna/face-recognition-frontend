@@ -17,7 +17,7 @@ const SignUp = ({ loadUser, onRouteChange }) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        fetch('http://localhost:3000/signup', {
+        fetch(`${api}/signup`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
